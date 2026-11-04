@@ -1,0 +1,254 @@
+/* ==========================================================================
+   استایل اختصاصی صفحات داشبورد
+   ========================================================================== */
+
+/* ---------- صفحه ورود ---------- */
+.login-wrap {
+  min-height: 100vh; min-height: 100svh;
+  display: grid; place-items: center; padding: 20px;
+}
+.login-box { width: min(100%, 400px); }
+.login-card { padding: 28px 24px; display: flex; flex-direction: column; gap: 18px; }
+.login-logo { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.brand-logo {
+  padding: 4px;
+  box-sizing: border-box;
+}
+.login-logo .brand-logo { width: 52px; height: 52px; border-radius: var(--radius-2xl); }
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.login-logo .brand-logo svg { width: 28px; height: 28px; }
+.login-t { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--foreground); }
+.login-d { font-size: 12px; color: var(--muted-foreground); }
+.login-foot { text-align: center; font-size: 11.5px; color: var(--muted-foreground); margin-top: 16px; }
+.login-foot a { color: var(--primary); font-weight: 600; }
+
+/* ---------- کارت خلاصه وضعیت ---------- */
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.hero h1 { font-size: 20px; font-weight: 700; }
+.hero-date { font-size: 12.5px; color: var(--muted-foreground); margin-top: 5px; display: flex; align-items: center; gap: 6px; }
+.hero-date svg { width: 13px; height: 13px; }
+
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 22px; }
+.stat {
+  display: flex; align-items: center; gap: 12px; padding: 15px 14px;
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s; border: none; text-align: start; width: 100%;
+}
+.stat:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.stat-ic { width: 40px; height: 40px; border-radius: var(--radius-lg); display: grid; place-items: center; flex-shrink: 0; }
+.stat-ic svg { width: 19px; height: 19px; }
+.stat-v { font-family: var(--font-heading); font-size: 21px; font-weight: 700; color: var(--foreground); line-height: 1.2; }
+.stat-l { font-size: 11.5px; color: var(--muted-foreground); margin-top: 2px; }
+.stats-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---------- کارت خدمات ---------- */
+.sec-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 26px 0 14px; flex-wrap: wrap; }
+.sec-title { font-family: var(--font-heading); font-size: 16.5px; font-weight: 700; display: flex; align-items: center; gap: 9px; }
+.sec-title svg { width: 18px; height: 18px; color: var(--primary); }
+.sec-link { font-size: 12.5px; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 4px; }
+.sec-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.sec-link svg { width: 14px; height: 14px; }
+
+.svc-tools { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+.svc-search { position: relative; flex: 1; min-width: 220px; max-width: 420px; }
+.svc-search svg { position: absolute; inset-inline-start: 10px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--muted-foreground); pointer-events: none; }
+.svc-search .input { padding-inline-start: 32px; background: var(--card); }
+.svc-cats { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.svc {
+  cursor: pointer; transition: transform .2s, box-shadow .2s;
+  padding: 16px; gap: 12px; display: flex; flex-direction: column;
+}
+.svc:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.svc:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 40%, transparent); }
+.svc-top { display: flex; align-items: flex-start; gap: 11px; }
+.svc-ic {
+  width: 42px; height: 42px; border-radius: var(--radius-xl); flex-shrink: 0;
+  background: color-mix(in srgb, var(--c, var(--primary)) 11%, transparent);
+  color: var(--c, var(--primary)); display: grid; place-items: center;
+}
+.svc-ic svg { width: 20px; height: 20px; }
+.svc-t { font-family: var(--font-heading); font-size: 14.5px; font-weight: 700; color: var(--foreground); line-height: 1.5; }
+.svc-cat { font-size: 10.5px; color: var(--muted-foreground); margin-top: 2px; display: inline-flex; align-items: center; gap: 4px; }
+.svc-cat::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: var(--c, var(--primary)); }
+.svc-desc { font-size: 12.5px; color: var(--muted-foreground); line-height: 1.8; min-height: 45px; }
+.svc-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px dashed color-mix(in srgb, var(--border) 80%, transparent); flex-wrap: wrap; }
+.svc-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+.svc-badges .badge { height: 20px; font-size: 10.5px; padding: 0 6px; }
+
+/* ---------- درخواست‌های من ---------- */
+.req-filter { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.req-search { position: relative; width: 230px; max-width: 100%; }
+.req-search svg { position: absolute; inset-inline-start: 9px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; color: var(--muted-foreground); pointer-events: none; }
+.req-search .input { height: 30px; font-size: 12.5px; padding-inline-start: 30px; }
+.sort-box { display: flex; align-items: center; gap: 6px; margin-inline-start: auto; }
+.sort-box .select { width: 150px; height: 30px; font-size: 12px; border-radius: var(--radius-md); }
+.req-meta { font-size: 11.5px; color: var(--muted-foreground); padding: 9px 14px; }
+.req-reject-cell { display: inline-flex; align-items: center; gap: 4px; color: var(--destructive); font-size: 11px; }
+
+/* ---------- صفحه فرم خدمت ---------- */
+.svc-hero { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; }
+.svc-hero .svc-ic { width: 52px; height: 52px; }
+.svc-hero .svc-ic svg { width: 25px; height: 25px; }
+.svc-hero-t { font-size: 19px; font-weight: 700; font-family: var(--font-heading); }
+.svc-hero-d { font-size: 13px; color: var(--muted-foreground); margin-top: 4px; max-width: 640px; line-height: 1.9; }
+.svc-hero-badges { display: flex; gap: 6px; margin-top: 9px; flex-wrap: wrap; }
+
+.form-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
+.form-main { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.form-aside { display: flex; flex-direction: column; gap: 14px; position: sticky; top: calc(var(--topbar-height) + 16px); }
+.aside-sticky-list { display: flex; flex-direction: column; gap: 3px; }
+.aside-doc { display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; padding: 7px 0; border-bottom: 1px dashed color-mix(in srgb, var(--border) 70%, transparent); }
+.aside-doc:last-child { border-bottom: none; }
+.aside-doc svg { width: 14px; height: 14px; color: var(--primary); flex-shrink: 0; margin-top: 3px; }
+.aside-note { font-size: 11.5px; color: var(--muted-foreground); background: var(--muted); border-radius: var(--radius-md); padding: 9px 11px; line-height: 1.8; display: flex; gap: 7px; }
+.aside-note svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--primary); margin-top: 2px; }
+.contract-box {
+  margin-top: 10px; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--muted) 40%, transparent); padding: 11px 13px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px;
+}
+.contract-box .cb-k { font-size: 10.5px; color: var(--muted-foreground); }
+.contract-box .cb-v { font-size: 12.5px; font-weight: 600; color: var(--foreground); margin-top: 1px; }
+
+/* ---------- جزئیات درخواست ---------- */
+.det-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
+.det-track { font-size: 11.5px; color: var(--muted-foreground); display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+.det-track b { font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--primary); letter-spacing: .5px; }
+.copy-btn { display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; color: var(--muted-foreground); border: 1px solid var(--border); background: var(--card); border-radius: var(--radius); padding: 2px 8px; }
+.copy-btn:hover { color: var(--primary); border-color: color-mix(in srgb, var(--primary) 40%, transparent); }
+.copy-btn svg { width: 11px; height: 11px; }
+
+.det-steps-card { padding: 18px 16px 14px; }
+
+.det-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; margin-top: 16px; }
+.det-main { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.det-aside { display: flex; flex-direction: column; gap: 14px; position: sticky; top: calc(var(--topbar-height) + 16px); }
+
+.kv { display: grid; grid-template-columns: 190px 1fr; gap: 0; }
+.kv > div { padding: 9px 2px; border-bottom: 1px dashed color-mix(in srgb, var(--border) 75%, transparent); font-size: 12.5px; }
+.kv .k { color: var(--muted-foreground); }
+.kv .v { font-weight: 600; color: var(--foreground); }
+.kv > div:nth-last-child(-n+2) { border-bottom: none; }
+
+.reject-box {
+  border: 1px solid color-mix(in srgb, var(--destructive) 30%, transparent);
+  background: color-mix(in srgb, var(--destructive) 5%, var(--card));
+  border-radius: var(--radius-lg); padding: 14px 16px; display: flex; gap: 11px;
+}
+.reject-box svg { width: 19px; height: 19px; color: var(--destructive); flex-shrink: 0; margin-top: 2px; }
+.reject-t { font-size: 13.5px; font-weight: 700; color: var(--destructive); }
+.reject-d { font-size: 12.5px; color: var(--foreground); margin-top: 4px; line-height: 1.9; }
+
+/* پیام‌ها */
+.msgs { display: flex; flex-direction: column; gap: 16px; }
+.msg { display: flex; gap: 10px; }
+.msg-body { min-width: 0; }
+.msg-meta { font-size: 10.5px; color: var(--muted-foreground); margin-bottom: 4px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.msg-meta b { font-size: 12px; color: var(--foreground); font-weight: 600; }
+.msg-role { background: var(--muted); border-radius: 5px; padding: 0 6px; font-size: 9.5px; }
+.msg-bubble {
+  background: var(--muted); border-radius: var(--radius-xl); border-start-start-radius: var(--radius-sm);
+  padding: 10px 13px; font-size: 12.5px; line-height: 1.9; color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+.msg.is-customer { flex-direction: row-reverse; }
+.msg.is-customer .msg-bubble {
+  background: color-mix(in srgb, var(--primary) 6%, var(--card));
+  border-color: color-mix(in srgb, var(--primary) 20%, transparent);
+  border-start-start-radius: var(--radius-xl); border-start-end-radius: var(--radius-sm);
+}
+.msg.is-customer .msg-meta { flex-direction: row-reverse; }
+.reply-box { display: flex; gap: 8px; align-items: flex-start; margin-top: 16px; border-top: 1px solid var(--border); padding-top: 16px; }
+.reply-box .textarea { min-height: 64px; }
+.reply-tools { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+.reply-file-n { font-size: 11px; color: var(--muted-foreground); }
+
+/* کارت خلاصه کنار جزئیات */
+.sum-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px dashed color-mix(in srgb, var(--border) 75%, transparent); font-size: 12px; }
+.sum-row:last-child { border-bottom: none; }
+.sum-row .k { color: var(--muted-foreground); }
+.sum-row .v { font-weight: 600; color: var(--foreground); text-align: end; }
+
+/* ---------- تیکت ---------- */
+.ticket-form-wrap { max-width: 760px; }
+.ticket-item { border-bottom: 1px solid var(--border); padding: 14px 16px; cursor: pointer; transition: background .15s; }
+.ticket-item:last-child { border-bottom: none; }
+.ticket-item:hover { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.ticket-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ticket-t { font-size: 13.5px; font-weight: 600; color: var(--foreground); }
+.ticket-no { font-size: 11px; color: var(--primary); font-weight: 600; }
+.ticket-msgs { border-top: 1px dashed var(--border); margin-top: 12px; padding-top: 12px; cursor: default; }
+
+/* ---------- پروفایل ---------- */
+.prof-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.prof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+.masked-val { display: inline-flex; align-items: center; gap: 6px; }
+.masked-val button { width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; border: none; background: var(--muted); color: var(--muted-foreground); }
+.masked-val button:hover { color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); }
+.masked-val button svg { width: 12px; height: 12px; }
+
+/* ---------- اطلاعیه‌ها ---------- */
+.ann-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+/* ---------- صفحه اعلان‌ها ---------- */
+.ntf-page .ntf { padding: 13px 12px; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); border-radius: 0; }
+.ntf-page .ntf:last-child { border-bottom: none; }
+.ntf-page .ntf:hover { background: var(--muted); }
+
+/* ---------- چاپ رسید ---------- */
+#print-sheet { display: none; }
+@media print {
+  body > #app, body > #toast-root, body > #dialog-root { display: none !important; }
+  #print-sheet { display: block !important; direction: rtl; font-family: Tahoma, sans-serif; padding: 24px; color: #111; }
+  .ps-logo { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #111; padding-bottom: 14px; margin-bottom: 18px; }
+  .ps-mark { width: 42px; height: 42px; background: #1d4ed8; color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; }
+  .ps-t { font-size: 17px; font-weight: bold; }
+  .ps-s { font-size: 11px; color: #555; }
+  .ps-box { border: 1.5px dashed #1d4ed8; border-radius: 8px; padding: 16px; text-align: center; margin: 14px 0; }
+  .ps-track { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+  table.ps-tbl { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  table.ps-tbl td { border-bottom: 1px solid #ddd; padding: 9px 6px; }
+  table.ps-tbl td:first-child { color: #555; width: 180px; }
+  .ps-note { font-size: 10.5px; color: #777; margin-top: 18px; border-top: 1px solid #ddd; padding-top: 10px; }
+}
+
+/* ---------- واکنش‌گرایی صفحات ---------- */
+@media (max-width: 1120px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-layout { grid-template-columns: 1fr; }
+  .form-aside { position: static; flex-direction: row; flex-wrap: wrap; }
+  .form-aside > .card { flex: 1 1 300px; }
+  .det-grid { grid-template-columns: 1fr; }
+  .det-aside { position: static; }
+}
+@media (max-width: 900px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stats-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats-4 { grid-template-columns: 1fr 1fr; }
+  .prof-grid { grid-template-columns: 1fr; }
+  .kv { grid-template-columns: 1fr; gap: 0; }
+  .kv .k { padding-bottom: 0; }
+  .kv > div:nth-last-child(-n+2) { border-bottom: 1px dashed color-mix(in srgb, var(--border) 75%, transparent); }
+  .kv > div:last-child { border-bottom: none; }
+  .rdo-cards { grid-template-columns: 1fr 1fr; }
+  .steps { display: none; }
+  .steps--v { display: flex; }
+  .contract-box { grid-template-columns: 1fr; }
+  .f-col-6, .f-col-8, .f-col-4, .f-col-3 { grid-column: span 12; }
+}
+/* استپر: نسخه عمودی پیش‌فرض مخفی در دسکتاپ */
+.steps--v { display: none; }
+@media (max-width: 640px) {
+  .steps--v { display: flex; }
+}

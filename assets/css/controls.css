@@ -1,0 +1,158 @@
+/* ==========================================================================
+   فرم‌ها و کنترل‌ها — بازسازی input.tsx + کنترل‌های تکمیلی
+   ========================================================================== */
+
+/* ---------- اینپوت (input.tsx) ---------- */
+.input, .select, .textarea {
+  width: 100%; height: var(--spacing-default);
+  border: 1px solid var(--stroke); border-radius: var(--radius);
+  padding: 0 8px; font-size: 14px; color: var(--card-foreground);
+  background: var(--card); transition: border-color .15s, box-shadow .15s;
+  outline: none;
+}
+.input::placeholder, .textarea::placeholder { color: color-mix(in srgb, var(--muted-foreground) 75%, transparent); }
+.input:hover, .select:hover, .textarea:hover { border-color: color-mix(in srgb, var(--muted-foreground) 45%, transparent); }
+.input:focus, .select:focus, .textarea:focus { border-color: var(--primary); }
+.input:active, .select:active, .textarea:active { border-color: var(--primary); }
+.input:disabled, .select:disabled, .textarea:disabled { border-color: var(--stroke); cursor: default; opacity: .55; background: var(--muted); }
+.input[readonly] { background: var(--muted); color: color-mix(in srgb, var(--foreground) 85%, transparent); }
+.input.is-invalid, .select.is-invalid, .textarea.is-invalid { border-color: hsl(0 84% 60%); }
+.input.is-invalid:focus, .select.is-invalid:focus, .textarea.is-invalid:focus { border-color: hsl(0 84% 60%); }
+
+.textarea { height: auto; min-height: 88px; padding: 8px 10px; line-height: 1.8; resize: vertical; }
+
+/* سلکت */
+.select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: left 8px center;
+  background-size: 15px; padding-inline-end: 8px; padding-inline-start: 28px;
+  cursor: pointer;
+}
+
+/* برچسب فیلد */
+.f-label { display: flex; align-items: center; gap: 4px; font-size: 12.5px; font-weight: 600; color: var(--foreground); margin-bottom: 6px; }
+.f-req { color: var(--destructive); font-weight: 700; }
+.f-hint { font-size: 11px; color: var(--muted-foreground); margin-top: 5px; line-height: 1.6; }
+.f-err { display: none; font-size: 11px; color: var(--destructive); margin-top: 5px; font-weight: 500; }
+.f.is-error .f-err { display: block; }
+
+/* شبکه فرم */
+.f-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px 14px; }
+.f-col-12 { grid-column: span 12; }
+.f-col-8 { grid-column: span 8; }
+.f-col-6 { grid-column: span 6; }
+.f-col-4 { grid-column: span 4; }
+.f-col-3 { grid-column: span 3; }
+
+/* بخش فرم */
+.fsection { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+.fsection:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.fsection-head { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
+.fsection-ic {
+  width: 30px; height: 30px; border-radius: var(--radius-md); flex-shrink: 0;
+  background: color-mix(in srgb, var(--primary) 9%, transparent); color: var(--primary);
+  display: grid; place-items: center;
+}
+.fsection-ic svg { width: 15px; height: 15px; }
+.fsection-t { font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--foreground); }
+.fsection-d { font-size: 11.5px; color: var(--muted-foreground); margin-top: 1px; }
+
+/* ---------- چک‌باکس ---------- */
+.chk { display: flex; gap: 9px; align-items: flex-start; cursor: pointer; font-size: 13px; line-height: 1.7; }
+.chk input {
+  appearance: none; -webkit-appearance: none; flex-shrink: 0;
+  width: 16px; height: 16px; margin: 4px 0 0;
+  border: 1.5px solid var(--stroke); border-radius: 4px; background: var(--card);
+  cursor: pointer; position: relative; transition: all .15s;
+}
+.chk input:hover { border-color: color-mix(in srgb, var(--primary) 55%, transparent); }
+.chk input:checked { background: var(--primary); border-color: var(--primary); }
+.chk input:checked::after {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat;
+}
+.chk input.is-invalid { border-color: hsl(0 84% 60%); }
+
+/* ---------- رادیو ---------- */
+.rdo { display: flex; gap: 9px; align-items: flex-start; cursor: pointer; font-size: 13px; line-height: 1.7; }
+.rdo input {
+  appearance: none; -webkit-appearance: none; flex-shrink: 0;
+  width: 16px; height: 16px; margin: 4px 0 0;
+  border: 1.5px solid var(--stroke); border-radius: 50%; background: var(--card);
+  cursor: pointer; position: relative; transition: all .15s;
+}
+.rdo input:hover { border-color: color-mix(in srgb, var(--primary) 55%, transparent); }
+.rdo input:checked { border-color: var(--primary); }
+.rdo input:checked::after {
+  content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--primary);
+}
+.rdo input.is-invalid { border-color: hsl(0 84% 60%); }
+
+/* رادیو کارتی */
+.rdo-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.rdo-card { position: relative; }
+.rdo-card input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.rdo-card .rc-box {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 13px 8px; border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--card); text-align: center; transition: all .15s;
+  font-size: 12.5px; font-weight: 500; color: var(--muted-foreground); height: 100%;
+}
+.rdo-card .rc-box svg { width: 19px; height: 19px; color: var(--muted-foreground); transition: color .15s; }
+.rdo-card input:checked + .rc-box { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 5%, var(--card)); color: var(--primary); font-weight: 600; }
+.rdo-card input:checked + .rc-box svg { color: var(--primary); }
+.rdo-card input:focus-visible + .rc-box { box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 40%, transparent); }
+.rdo-card.is-invalid .rc-box { border-color: hsl(0 84% 60%); }
+
+/* گروه چک‌باکس */
+.chk-group { display: flex; flex-wrap: wrap; gap: 9px 16px; }
+
+/* ---------- بارگذاری فایل ---------- */
+.dropzone {
+  border: 1.5px dashed color-mix(in srgb, var(--muted-foreground) 40%, transparent);
+  border-radius: var(--radius-lg); padding: 22px 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-align: center; cursor: pointer; transition: all .15s;
+  background: color-mix(in srgb, var(--muted) 35%, transparent);
+}
+.dropzone:hover, .dropzone.is-over { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 5%, var(--card)); }
+.dropzone svg { width: 22px; height: 22px; color: var(--primary); }
+.dropzone .dz-t { font-size: 13px; font-weight: 600; color: var(--foreground); }
+.dropzone .dz-t span { color: var(--primary); }
+.dropzone .dz-d { font-size: 11px; color: var(--muted-foreground); }
+
+.file-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.file-item {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 9px 12px; background: var(--card); animation: slideUp .2s ease both;
+}
+.file-ic {
+  width: 32px; height: 32px; border-radius: var(--radius-md); flex-shrink: 0;
+  background: color-mix(in srgb, var(--primary) 9%, transparent); color: var(--primary);
+  display: grid; place-items: center;
+}
+.file-ic svg { width: 15px; height: 15px; }
+.file-name { font-size: 12.5px; font-weight: 500; color: var(--foreground); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-size { font-size: 11px; color: var(--muted-foreground); }
+.file-x {
+  margin-inline-start: auto; width: 26px; height: 26px; flex-shrink: 0;
+  border-radius: var(--radius-md); display: grid; place-items: center;
+  border: none; background: transparent; color: var(--muted-foreground);
+}
+.file-x:hover { background: color-mix(in srgb, var(--destructive) 10%, transparent); color: var(--destructive); }
+
+.doc-req { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.doc-req .badge { height: 24px; }
+
+/* ---------- نوار فرم (اکشن‌ها) ---------- */
+.form-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  border-top: 1px solid var(--border); padding-top: 16px; margin-top: 18px;
+}
+.form-actions .fa-note { font-size: 11.5px; color: var(--muted-foreground); margin-inline-start: auto; display: flex; align-items: center; gap: 5px; }
+.form-actions .fa-note svg { width: 13px; height: 13px; color: var(--destructive); }
+
+/* پیام خطای سراسری فرم */
+.form-alert-err { margin-bottom: 14px; }

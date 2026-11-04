@@ -1,0 +1,104 @@
+/* ==========================================================================
+   توکن‌های طراحی — معادل کامل utilities.css فایل مرجع
+   (Tailwind v4 @theme -> CSS Variables)
+   ========================================================================== */
+
+:root {
+  /* --- پالت رنگ --- */
+  --background: hsl(210 20% 97%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+  --primary: hsl(221 83% 53%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215 16% 47%);
+  --accent: hsl(210 40% 95%);
+  --accent-foreground: hsl(222 47% 11%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --success: hsl(142 71% 40%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(38 92% 50%);
+  --warning-foreground: hsl(26 83% 14%);
+  --border: hsl(214 32% 91%);
+  --input: hsl(214 32% 91%);
+  --stroke: hsl(214 32% 91%);
+  --ring: hsl(221 83% 63%);
+
+  /* --- سایدبار --- */
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(222 47% 11%);
+  --sidebar-primary: hsl(221 83% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(210 40% 96%);
+  --sidebar-accent-foreground: hsl(222 47% 11%);
+  --sidebar-border: hsl(214 32% 91%);
+  --sidebar-ring: hsl(221 83% 63%);
+
+  /* --- پالت نمودار (chart-1 تا chart-8) --- */
+  --chart-1: hsl(221 83% 53%);
+  --chart-2: hsl(142 71% 40%);
+  --chart-3: hsl(27 96% 61%);
+  --chart-4: hsl(258 90% 66%);
+  --chart-5: hsl(43 96% 56%);
+  --chart-6: hsl(189 94% 43%);
+  --chart-7: hsl(330 81% 60%);
+  --chart-8: hsl(215 16% 47%);
+
+  /* --- پالت نقشه حرارتی (heatmap) --- */
+  --heatmap-0: hsl(210 40% 96%);
+  --heatmap-1: hsl(221 83% 88%);
+  --heatmap-2: hsl(221 83% 70%);
+  --heatmap-3: hsl(221 83% 53%);
+
+  /* --- شعاع گردی: --radius: 0.255rem (مطابق مرجع) --- */
+  --radius: 0.255rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  /* --- سایه‌ها (مطابق مرجع) --- */
+  --shadow-opacity: 0.1;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 0;
+  --shadow-offset-y: 1px;
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 8px 13px -3px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+
+  /* --- اندازه‌ها --- */
+  --spacing: 0.25rem;
+  --spacing-default: 34px; /* h-default: ارتفاع استاندارد دکمه و اینپوت */
+  --tracking-normal: 0em;
+  --letter-spacing: 0em;
+
+  /* --- ابعاد سایدبار (مطابق مرجع) --- */
+  --sidebar-width: 18rem;
+  --sidebar-width-icon: 4.8rem;
+  --topbar-height: 56px;
+
+  /* --- فونت --- */
+  --font-heading: var(--app-font-iran-yekan);
+  --font-sans: var(--app-font-iran-yekan);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* --- رنگ‌های کمکی وضعیت‌ها --- */
+  --st-active: var(--primary);
+  --st-doing: hsl(38 92% 50%);
+  --st-done: var(--success);
+  --st-rejected: var(--destructive);
+}
