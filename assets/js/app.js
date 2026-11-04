@@ -104,6 +104,7 @@
       var main = [
         { href: '#/home', icon: 'home', label: 'صفحه اصلی' },
         { href: '#/services', icon: 'grid', label: 'خدمات غیرحضوری' },
+        { href: '#/services2', icon: 'layout-grid', label: 'خدمات غیرحضوری ۲' },
         { href: '#/requests', icon: 'clipboard-list', label: 'درخواست‌های من' },
         { href: '#/tickets', icon: 'ticket', label: 'ثبت تیکت' },
         // { href: '#/profile', icon: 'user', label: 'پروفایل کاربری' },
@@ -172,6 +173,7 @@
       else if (seg === 'home') view = window.Views.home;
       else if (seg === 'services') { view = window.Views.services; params = { cat: r.query.cat || '' }; }
       else if (seg === 'service' && r.segs[1]) { view = window.Views.form; params = { id: r.segs[1] }; }
+      else if (seg === 'services2') {view = window.Views.services2;}
       else if (seg === 'requests') { view = window.Views.requests; params = { tab: r.query.tab || '' }; }
       else if (seg === 'request' && r.segs[1]) { view = window.Views.requestDetail; params = { track: r.segs[1] }; }
       else if (seg === 'tickets') { view = window.Views.tickets; params = { tab: r.query.tab || '' }; }
