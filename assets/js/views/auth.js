@@ -10,15 +10,17 @@ window.Views.login = {
       '<div class="login-box">' +
         '<div class="card login-card anim-in">' +
           '<div class="login-logo">' +
-            '<span class="brand-logo">' + window.icon('car-front') + '</span>' +
+          '<span class="brand-logo">' +
+          '<img src="assets/images/logo.png" alt="لوگوی لیزینگ مشرق‌زمین">' +
+          '</span>' +
             '<div class="login-t">لیزینگ مشرق‌زمین</div>' +
             '<div class="login-d">سامانه خدمات غیرحضوری مشتریان</div>' +
           '</div>' +
-          '<div class="alert al-info">' +
-            '<span class="al-ic">' + window.icon('info') + '</span>' +
-            '<div><div class="al-title">نسخه نمایشی (دمو)</div>' +
-            '<div class="al-desc">هر مقداری در فیلدها وارد کنید و وارد شوید؛ داده‌های نمونه نمایش داده می‌شود.</div></div>' +
-          '</div>' +
+          // '<div class="alert al-info">' +
+          //   '<span class="al-ic">' + window.icon('info') + '</span>' +
+          //   '<div><div class="al-title">نسخه نمایشی (دمو)</div>' +
+          //   '<div class="al-desc">هر مقداری در فیلدها وارد کنید و وارد شوید؛ داده‌های نمونه نمایش داده می‌شود.</div></div>' +
+          // '</div>' +
           '<form id="login-form" novalidate>' +
             '<div class="f-grid">' +
               '<div class="f f-col-12" data-field="nid">' +
@@ -36,7 +38,7 @@ window.Views.login = {
             '<div style="text-align:center;margin-top:10px"><a href="#" id="lg-forgot" class="text-sm text-primary">فراموشی رمز عبور؟</a></div>' +
           '</form>' +
         '</div>' +
-        '<div class="login-foot">جهت دریافت رمز عبور با پشتیبانی <b>۰۲۱-۸۷۴۴</b> تماس بگیرید</div>' +
+        '<div class="login-foot">جهت دریافت رمز عبور با پشتیبانی <b dir="ltr">۰۲۱-۷۹۰۲۵۰۰۰</b> تماس بگیرید</div>' +
       '</div>' +
     '</div>';
   },
