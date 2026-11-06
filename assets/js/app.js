@@ -49,6 +49,15 @@
             //   '<div class="sb-ver">نسخه ۱.۰.۰ — نمونه اولیه</div>' +
             // '</div>' +
           '</div>' +
+          '<div class="sb-loyalty-card">' +
+          '<div class="sb-loyalty-content">' +
+          '<div class="sb-loyalty-title">باشگاه مشتریان</div>' +
+          '<p>سطح عضویت شما در باشگاه لیزینگ طلایی است.</p>' +
+          '<button type="button" class="sb-loyalty-btn">' +
+          'ورود به باشگاه' +
+          '</button>' +
+          '</div>' +
+          '</div>' +
         '</aside>' +
         '<div class="sb-scrim" id="sb-scrim"></div>' +
         '<div class="app-body">' +
