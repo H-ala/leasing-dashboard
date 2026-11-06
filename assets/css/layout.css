@@ -20,7 +20,14 @@
   transition: width .2s ease, transform .25s ease;
   z-index: 40;
 }
-.sb-inner { display: flex; flex-direction: column; height: 100%; padding-top: 3px; overflow: hidden; }
+.sb-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding-top: 3px;
+  overflow: hidden;
+}
 
 .sb-head { padding: 12px; }
 .sb-user {
@@ -79,16 +86,6 @@
 
 .app[data-sb="collapsed"] .sb-loyalty-card {
   display: none;
-}
-
-.sb-loyalty-card {
-  flex-shrink: 0;
-  margin: auto 4px 12px;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  border: 1px solid #bfdbfe;
-  color: #1e40af;
 }
 
 .sb-content { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; padding: 6px 8px 8px; }
